@@ -4,31 +4,133 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
+// Import all screenshot images
+import portfolioViewImage from '@/assets/portfolio-view.png';
+import watchlistPortfolioImage from '@/assets/watchlist-and-portfolio.png';
+import holdingsListImage from '@/assets/holdings-list.png';
+import holdingsDetailImage from '@/assets/holdings-detail-view.png';
+import holdingsPositionsImage from '@/assets/holdings-positions-view.png';
+import stockDetailsImage from '@/assets/stock-details-rich-information.png';
+import financialDataImage from '@/assets/rich-financial-data.png';
+import earningsAnalysisImage from '@/assets/earnings-analysis-visualizations.png';
+import earningsDetailsImage from '@/assets/earnings-details-visualizations.png';
+import valuationAnalysisImage from '@/assets/valuation-analysis-visualizations.png';
+import riskAnalysisImage from '@/assets/risk-review-analysis.png';
+import aiAnalysisImage from '@/assets/ai-analysis-report.png';
+import ownershipAnalysisImage from '@/assets/ownership-analysis.png';
+import analystsInsightsImage from '@/assets/analysts-feedback-visualizations.png';
+import quickFiltersImage from '@/assets/quick-preset-filters.png';
+import advancedScreeningImage from '@/assets/advanced-screening-filters.png';
+import marketUpdatesImage from '@/assets/market-updates.png';
+import newsStoriesImage from '@/assets/news-and-stories.png';
+import portfolioAnalyticsImage from '@/assets/portfolio-analysics.png';
+
 const screenshots = [
+  // Market Intelligence First
   {
-    title: 'Portfolio Dashboard',
-    description: 'Track your investments with real-time performance metrics and P&L analysis',
-    image: '@assets/Screenshot_20250927-222821_1759037909546.png'
+    title: 'Market Updates',
+    description: 'Latest market news and real-time updates',
+    image: marketUpdatesImage
   },
   {
-    title: 'Market Overview',
-    description: 'Monitor major market indices and your watchlist in one comprehensive view',
-    image: '@assets/Simulator Screenshot - iPhone 17 Pro Max - 2025-09-27 at 22.26.47_1759037909547.png'
+    title: 'News & Stories',
+    description: 'Relevant news and market stories for informed decisions',
+    image: newsStoriesImage
+  },
+  
+  // Portfolio & Watchlist
+  {
+    title: 'Watchlist & Portfolio',
+    description: 'Manage your investments and watchlist with real-time updates',
+    image: watchlistPortfolioImage
+  },
+  
+  // Holdings Management
+  {
+    title: 'Holdings List',
+    description: 'View all your current positions with performance tracking',
+    image: holdingsListImage
   },
   {
-    title: 'Stock Screener',
-    description: 'Filter thousands of stocks with advanced criteria and quick filters',
-    image: '@assets/Simulator Screenshot - iPhone 17 Pro Max - 2025-09-27 at 22.27.20_1759037909549.png'
+    title: 'Holdings Details',
+    description: 'Detailed view of specific holdings with comprehensive metrics',
+    image: holdingsDetailImage
   },
   {
-    title: 'Stock Analysis',
-    description: 'Get detailed financial analysis with AI-powered insights and risk assessment',
-    image: '@assets/Simulator Screenshot - iPhone 17 Pro Max - 2025-09-27 at 22.28.47_1759037909550.png'
+    title: 'Position Analysis',
+    description: 'In-depth analysis of your investment positions and performance',
+    image: holdingsPositionsImage
+  },
+  
+  // Portfolio Overview & Analytics
+  {
+    title: 'Portfolio Overview',
+    description: 'Your main dashboard showing overall portfolio performance and key metrics',
+    image: portfolioViewImage
+  },
+  {
+    title: 'Portfolio Analytics',
+    description: 'Advanced portfolio analytics and performance insights',
+    image: portfolioAnalyticsImage
+  },
+  
+  // Stock Research & Analysis
+  {
+    title: 'Stock Details',
+    description: 'Comprehensive stock information with key financial data',
+    image: stockDetailsImage
+  },
+  {
+    title: 'AI Analysis Report',
+    description: 'AI-powered comprehensive analysis and intelligent insights',
+    image: aiAnalysisImage
   },
   {
     title: 'Financial Data',
-    description: 'Access comprehensive financial metrics and valuation ratios',
-    image: '@assets/Simulator Screenshot - iPhone 17 Pro Max - 2025-09-27 at 22.28.57_1759037909551.png'
+    description: 'Rich financial metrics, ratios, and performance indicators',
+    image: financialDataImage
+  },
+  {
+    title: 'Earnings Analysis',
+    description: 'Earnings performance trends and historical analysis',
+    image: earningsAnalysisImage
+  },
+  {
+    title: 'Earnings Details',
+    description: 'Detailed earnings breakdowns with quarterly comparisons',
+    image: earningsDetailsImage
+  },
+  {
+    title: 'Valuation Analysis',
+    description: 'Stock valuation metrics and comparative analysis',
+    image: valuationAnalysisImage
+  },
+  {
+    title: 'Analyst Insights',
+    description: 'Professional analyst recommendations and price targets',
+    image: analystsInsightsImage
+  },
+  {
+    title: 'Risk Analysis',
+    description: 'Comprehensive risk assessment and review tools',
+    image: riskAnalysisImage
+  },
+  {
+    title: 'Ownership Analysis',
+    description: 'Institutional and insider ownership breakdowns',
+    image: ownershipAnalysisImage
+  },
+  
+  // Screening & Discovery
+  {
+    title: 'Advanced Screening',
+    description: 'Sophisticated filtering tools with custom criteria',
+    image: advancedScreeningImage
+  },
+  {
+    title: 'Quick Filters',
+    description: 'Easy preset screening options for rapid stock discovery',
+    image: quickFiltersImage
   }
 ];
 
@@ -62,19 +164,21 @@ export default function Screenshots() {
         {/* Mobile Carousel */}
         <div className="relative">
           <div className="flex items-center justify-center">
-            {/* Phone Frame */}
-            <div className="relative">
-              <div className="w-80 h-[600px] bg-gradient-to-b from-gray-800 to-gray-900 rounded-[2.5rem] p-2 shadow-2xl">
-                <div className="w-full h-full bg-black rounded-[2rem] overflow-hidden relative">
-                  {/* Screenshot placeholder - in real app, this would show the actual images */}
-                  <div className="w-full h-full bg-gradient-to-b from-gray-900 to-black flex items-center justify-center">
-                    <div className="text-center space-y-4 p-8">
-                      <div className="text-2xl font-mono text-primary">{currentIndex + 1}/{screenshots.length}</div>
-                      <h3 className="text-xl font-bold text-white">{screenshots[currentIndex].title}</h3>
-                      <p className="text-sm text-gray-300">{screenshots[currentIndex].description}</p>
-                    </div>
-                  </div>
-                </div>
+            {/* Simple Image Display */}
+            <div className="text-center">
+              <div className="w-80 h-[600px] mx-auto mb-6">
+                <img 
+                  src={screenshots[currentIndex].image} 
+                  alt={screenshots[currentIndex].title}
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              
+              {/* Description below image */}
+              <div className="max-w-md mx-auto space-y-3">
+                <div className="text-sm font-mono text-primary">{currentIndex + 1}/{screenshots.length}</div>
+                <h3 className="text-xl font-bold text-foreground">{screenshots[currentIndex].title}</h3>
+                <p className="text-sm text-muted-foreground">{screenshots[currentIndex].description}</p>
               </div>
             </div>
           </div>
