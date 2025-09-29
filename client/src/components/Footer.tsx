@@ -1,9 +1,6 @@
-import { useState } from 'react';
 import { Mail, MessageCircle } from 'lucide-react';
 import logo from '@/assets/logo.webp';
-import PrivacyPolicyModal from '@/components/modals/PrivacyPolicyModal';
-import TermsOfServiceModal from '@/components/modals/TermsOfServiceModal';
-import DataCollectionModal from '@/components/modals/DataCollectionModal';
+import { useLegalPageNavigation } from '@/components/LegalPageWrapper';
 
 export default function Footer() {
   //todo: remove mock functionality
@@ -11,10 +8,8 @@ export default function Footer() {
     console.log(`Contact via ${method} clicked`);
   };
 
-  // Modal state management
-  const [isPrivacyModalOpen, setIsPrivacyModalOpen] = useState(false);
-  const [isTermsModalOpen, setIsTermsModalOpen] = useState(false);
-  const [isDataCollectionModalOpen, setIsDataCollectionModalOpen] = useState(false);
+  // Use the legal page navigation hook
+  const { openLegalPage, modals } = useLegalPageNavigation();
 
   return (
     <footer className="bg-card border-t border-border py-12 px-4 sm:px-6 lg:px-8">
@@ -52,7 +47,7 @@ export default function Footer() {
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
                 <button 
-                  onClick={() => setIsDataCollectionModalOpen(true)}
+                  onClick={() => openLegalPage('dataCollection')}
                   className="hover:text-foreground transition-colors text-left" 
                   data-testid="link-data-collection"
                 >
@@ -61,7 +56,7 @@ export default function Footer() {
               </li>
               <li>
                 <button 
-                  onClick={() => setIsPrivacyModalOpen(true)}
+                  onClick={() => openLegalPage('privacy')}
                   className="hover:text-foreground transition-colors text-left" 
                   data-testid="link-privacy"
                 >
@@ -70,7 +65,7 @@ export default function Footer() {
               </li>
               <li>
                 <button 
-                  onClick={() => setIsTermsModalOpen(true)}
+                  onClick={() => openLegalPage('terms')}
                   className="hover:text-foreground transition-colors text-left" 
                   data-testid="link-terms"
                 >
@@ -119,19 +114,8 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Modals */}
-      <PrivacyPolicyModal 
-        isOpen={isPrivacyModalOpen} 
-        onClose={() => setIsPrivacyModalOpen(false)} 
-      />
-      <TermsOfServiceModal 
-        isOpen={isTermsModalOpen} 
-        onClose={() => setIsTermsModalOpen(false)} 
-      />
-      <DataCollectionModal 
-        isOpen={isDataCollectionModalOpen} 
-        onClose={() => setIsDataCollectionModalOpen(false)} 
-      />
+      {/* Render modals if in modal mode */}
+      {modals}
     </footer>
   );
 }
