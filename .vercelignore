@@ -1,0 +1,6 @@
+server/
+*.ts
+!client/
+node_modules/
+.env*
+README.md
