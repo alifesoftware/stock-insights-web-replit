@@ -4,7 +4,7 @@ export type LegalPageMode = 'modal' | 'page';
 export const LEGAL_PAGES_CONFIG = {
   // Change this to 'page' to use full pages with React Router
   // Change this to 'modal' to use modal overlays
-  mode: 'mode' as LegalPageMode,
+  mode: 'modal' as LegalPageMode,
   
   // Page routes (used when mode is 'page')
   routes: {

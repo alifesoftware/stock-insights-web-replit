@@ -47,15 +47,6 @@ export default function Footer() {
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
                 <button 
-                  onClick={() => openLegalPage('dataCollection')}
-                  className="hover:text-foreground transition-colors text-left" 
-                  data-testid="link-data-collection"
-                >
-                  Data Collection & AI Features
-                </button>
-              </li>
-              <li>
-                <button 
                   onClick={() => openLegalPage('privacy')}
                   className="hover:text-foreground transition-colors text-left" 
                   data-testid="link-privacy"
@@ -70,6 +61,15 @@ export default function Footer() {
                   data-testid="link-terms"
                 >
                   Terms of Service
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => openLegalPage('dataCollection')}
+                  className="hover:text-foreground transition-colors text-left" 
+                  data-testid="link-data-collection"
+                >
+                  Data Collection & AI Policy
                 </button>
               </li>
               <li><a href="#" className="hover:text-foreground transition-colors" data-testid="link-contact">Contact Us</a></li>
