@@ -89,11 +89,11 @@ export default function Download() {
             </div>
             <div className="flex items-center justify-center space-x-2">
               <div className="h-2 w-2 bg-success rounded-full" />
-              <span>No ads or data selling</span>
+              <span>Informative visualizations</span>
             </div>
             <div className="flex items-center justify-center space-x-2">
               <div className="h-2 w-2 bg-success rounded-full" />
-              <span>Bank-level security</span>
+              <span>Premium AI analysis</span>
             </div>
             <div className="flex items-center justify-center space-x-2">
               <div className="h-2 w-2 bg-success rounded-full" />
@@ -106,9 +106,9 @@ export default function Download() {
         <div className="text-center mt-12 space-y-4">
           <p className="text-sm text-muted-foreground">Trusted by investors worldwide</p>
           <div className="flex justify-center space-x-8 text-xs text-muted-foreground">
-            <span>✓ 256-bit encryption</span>
-            <span>✓ SOC 2 compliant</span>
-            <span>✓ Privacy focused</span>
+            <span>✓ Beautiful visualizations</span>
+            <span>✓ Advanced AI-based analytics</span>
+            <span>✓ Multi-market coverage</span>
           </div>
         </div>
       </div>

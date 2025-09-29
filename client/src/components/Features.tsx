@@ -57,8 +57,8 @@ const features = [
   {
     icon: Shield,
     title: 'Secure & Private',
-    description: 'Bank-level encryption, no data selling, and offline access for complete privacy and security.',
-    items: ['Bank-level encryption', 'No data selling', 'Offline access']
+    description: 'All your data stays with you, and no account data is stored on our server for complete privacy and security.',
+    items: ['No data offload to cloud', 'Data stored on phone']
   }
 ];
 

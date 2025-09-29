@@ -1,11 +1,20 @@
+import { useState } from 'react';
 import { Mail, MessageCircle } from 'lucide-react';
 import logo from '@/assets/logo.webp';
+import PrivacyPolicyModal from '@/components/modals/PrivacyPolicyModal';
+import TermsOfServiceModal from '@/components/modals/TermsOfServiceModal';
+import DataCollectionModal from '@/components/modals/DataCollectionModal';
 
 export default function Footer() {
   //todo: remove mock functionality
   const handleContact = (method: string) => {
     console.log(`Contact via ${method} clicked`);
   };
+
+  // Modal state management
+  const [isPrivacyModalOpen, setIsPrivacyModalOpen] = useState(false);
+  const [isTermsModalOpen, setIsTermsModalOpen] = useState(false);
+  const [isDataCollectionModalOpen, setIsDataCollectionModalOpen] = useState(false);
 
   return (
     <footer className="bg-card border-t border-border py-12 px-4 sm:px-6 lg:px-8">
@@ -41,9 +50,33 @@ export default function Footer() {
           <div className="space-y-4">
             <h3 className="text-sm font-semibold text-foreground">Support</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><a href="#" className="hover:text-foreground transition-colors" data-testid="link-help">Help Center</a></li>
-              <li><a href="#" className="hover:text-foreground transition-colors" data-testid="link-privacy">Privacy Policy</a></li>
-              <li><a href="#" className="hover:text-foreground transition-colors" data-testid="link-terms">Terms of Service</a></li>
+              <li>
+                <button 
+                  onClick={() => setIsDataCollectionModalOpen(true)}
+                  className="hover:text-foreground transition-colors text-left" 
+                  data-testid="link-data-collection"
+                >
+                  Data Collection & AI Features
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => setIsPrivacyModalOpen(true)}
+                  className="hover:text-foreground transition-colors text-left" 
+                  data-testid="link-privacy"
+                >
+                  Privacy Policy
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => setIsTermsModalOpen(true)}
+                  className="hover:text-foreground transition-colors text-left" 
+                  data-testid="link-terms"
+                >
+                  Terms of Service
+                </button>
+              </li>
               <li><a href="#" className="hover:text-foreground transition-colors" data-testid="link-contact">Contact Us</a></li>
             </ul>
           </div>
@@ -77,11 +110,28 @@ export default function Footer() {
           <p className="text-sm text-muted-foreground">
             © 2025 Stock Markets - AI Insights. All rights reserved.
           </p>
-          <div className="flex space-x-4 text-sm text-muted-foreground mt-4 sm:mt-0">
-            <span>Made with ♥ for investors</span>
+          <div className="hidden sm:block text-sm text-muted-foreground">
+            An A-Life Software Production
+          </div>
+          <div className="text-sm text-muted-foreground mt-4 sm:mt-0">
+            <span>Made with <span style={{color: '#ef4444'}}>♥</span> in San Francisco</span>
           </div>
         </div>
       </div>
+
+      {/* Modals */}
+      <PrivacyPolicyModal 
+        isOpen={isPrivacyModalOpen} 
+        onClose={() => setIsPrivacyModalOpen(false)} 
+      />
+      <TermsOfServiceModal 
+        isOpen={isTermsModalOpen} 
+        onClose={() => setIsTermsModalOpen(false)} 
+      />
+      <DataCollectionModal 
+        isOpen={isDataCollectionModalOpen} 
+        onClose={() => setIsDataCollectionModalOpen(false)} 
+      />
     </footer>
   );
 }
