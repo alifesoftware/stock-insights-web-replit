@@ -1,6 +1,8 @@
-server/
-*.ts
-!client/
-node_modules/
+node_modules
+.git
+*.log
 .env*
 README.md
+design_guidelines.md
+LEGAL_PAGES_CONFIG.md
+attached_assets
