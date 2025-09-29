@@ -1,4 +1,5 @@
-import { Smartphone, Mail, MessageCircle } from 'lucide-react';
+import { Mail, MessageCircle } from 'lucide-react';
+import logo from '@/assets/logo.webp';
 
 export default function Footer() {
   //todo: remove mock functionality
@@ -12,11 +13,13 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="space-y-4">
-            <div className="flex items-center space-x-2">
-              <div className="h-8 w-8 bg-primary rounded-lg flex items-center justify-center">
-                <Smartphone className="h-5 w-5 text-primary-foreground" />
-              </div>
-              <span className="text-lg font-bold text-foreground">Stock Markets AI</span>
+            <div className="flex items-center space-x-3">
+              <img 
+                src={logo} 
+                alt="Stock Markets AI Logo" 
+                className="h-9 w-9 rounded-lg object-contain"
+              />
+              <span className="text-lg font-bold text-foreground">Stock Markets - AI Insights</span>
             </div>
             <p className="text-sm text-muted-foreground">
               AI-powered stock market analysis for smarter investment decisions.
@@ -72,7 +75,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-border mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center">
           <p className="text-sm text-muted-foreground">
-            © 2025 Stock Markets AI. All rights reserved.
+            © 2025 Stock Markets - AI Insights. All rights reserved.
           </p>
           <div className="flex space-x-4 text-sm text-muted-foreground mt-4 sm:mt-0">
             <span>Made with ♥ for investors</span>

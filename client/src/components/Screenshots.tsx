@@ -149,7 +149,7 @@ export default function Screenshots() {
     <section id="screenshots" className="py-24 px-4 sm:px-6 lg:px-8 bg-card">
       <div className="max-w-7xl mx-auto">
         <div className="text-center space-y-4 mb-16">
-          <Badge variant="secondary" className="text-sm px-4 py-2" data-testid="badge-screenshots">
+          <Badge className="text-sm px-4 py-2 text-white hover:opacity-90" style={{backgroundColor: '#007AFF'}} data-testid="badge-screenshots">
             App Screenshots
           </Badge>
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground">

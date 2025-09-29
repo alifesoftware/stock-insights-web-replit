@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Menu, X, Smartphone } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import logo from '@/assets/logo.webp';
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -10,11 +11,13 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <div className="h-8 w-8 bg-primary rounded-lg flex items-center justify-center">
-              <Smartphone className="h-5 w-5 text-primary-foreground" />
-            </div>
-            <span className="text-xl font-bold text-foreground">Stock Markets AI</span>
+          <div className="flex items-center space-x-3">
+            <img 
+              src={logo} 
+              alt="Stock Markets AI Logo" 
+              className="h-10 w-10 rounded-lg object-contain"
+            />
+            <span className="text-xl font-bold text-foreground">Stock Markets - AI Insights</span>
           </div>
 
           {/* Desktop Navigation */}

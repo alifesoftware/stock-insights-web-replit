@@ -1,7 +1,9 @@
-import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Smartphone, Download as DownloadIcon, Star } from 'lucide-react';
+import { Star } from 'lucide-react';
+import logo from '@/assets/logo.webp';
+import appStoreButton from '@/assets/app-store.png';
+import googlePlayButton from '@/assets/google-play.png';
 
 export default function Download() {
   //todo: remove mock functionality
@@ -13,7 +15,7 @@ export default function Download() {
     <section id="download" className="py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
         <div className="text-center space-y-4 mb-16">
-          <Badge variant="secondary" className="text-sm px-4 py-2" data-testid="badge-download">
+          <Badge className="text-sm px-4 py-2 text-white hover:opacity-90" style={{backgroundColor: '#007AFF'}} data-testid="badge-download">
             Download Now
           </Badge>
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground">
@@ -21,15 +23,19 @@ export default function Download() {
             <span className="text-primary block">Journey Today</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Join thousands of investors who trust Stock Markets AI for smarter investment decisions
+            Join thousands of investors who trust Stock Markets - AI Insights for smarter investment decisions
           </p>
         </div>
 
         <Card className="p-8 text-center space-y-8">
           {/* App Icon */}
           <div className="flex justify-center">
-            <div className="h-20 w-20 bg-primary rounded-2xl flex items-center justify-center shadow-lg">
-              <Smartphone className="h-10 w-10 text-primary-foreground" />
+            <div className="h-20 w-20 rounded-2xl shadow-lg overflow-hidden">
+              <img 
+                src={logo} 
+                alt="Stock Markets AI App Icon" 
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
 
@@ -50,26 +56,29 @@ export default function Download() {
           </div>
 
           {/* Download Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              size="lg" 
-              className="w-full sm:w-auto px-8 py-3"
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <button 
               onClick={() => handleDownload('iOS')}
               data-testid="button-final-download-ios"
+              className="transition-transform hover:scale-105"
             >
-              <DownloadIcon className="mr-2 h-5 w-5" />
-              Download for iOS
-            </Button>
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="w-full sm:w-auto px-8 py-3"
+              <img 
+                src={appStoreButton} 
+                alt="Download on the App Store" 
+                className="h-14 w-auto"
+              />
+            </button>
+            <button 
               onClick={() => handleDownload('Android')}
               data-testid="button-final-download-android"
+              className="transition-transform hover:scale-105"
             >
-              <DownloadIcon className="mr-2 h-5 w-5" />
-              Download for Android
-            </Button>
+              <img 
+                src={googlePlayButton} 
+                alt="Get it on Google Play" 
+                className="h-14 w-auto"
+              />
+            </button>
           </div>
 
           {/* Features List */}

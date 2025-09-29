@@ -57,7 +57,7 @@ const features = [
   {
     icon: Shield,
     title: 'Secure & Private',
-    description: 'Sign in with Apple/Google, bank-level encryption, no ads or data selling, and local data caching for offline access.',
+    description: 'Bank-level encryption, no data selling, and offline access for complete privacy and security.',
     items: ['Bank-level encryption', 'No data selling', 'Offline access']
   }
 ];
@@ -67,7 +67,7 @@ export default function Features() {
     <section id="features" className="py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="text-center space-y-4 mb-16">
-          <Badge variant="secondary" className="text-sm px-4 py-2" data-testid="badge-features">
+          <Badge className="text-sm px-4 py-2 text-white hover:opacity-90" style={{backgroundColor: '#007AFF'}} data-testid="badge-features">
             Features
           </Badge>
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground">
@@ -113,9 +113,9 @@ export default function Features() {
         {/* Market Coverage */}
         <div className="mt-16 text-center">
           <h3 className="text-2xl font-bold text-foreground mb-4">Global Market Coverage</h3>
-          <p className="text-muted-foreground mb-8">NYSE, NASDAQ, LSE, TSX, ASX, NSE, and 20+ global exchanges</p>
+          <p className="text-muted-foreground mb-8">US, India, Canada, UK, Australia, Germany, and 20+ global exchanges</p>
           <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
-            {['NYSE', 'NASDAQ', 'LSE', 'TSX', 'ASX', 'NSE', 'FTSE', 'DAX'].map((exchange) => (
+            {['NYSE', 'NASDAQ', 'BSE', 'NSE', 'LSE', 'TSX', 'ASX', 'FTSE', 'DAX'].map((exchange) => (
               <Badge key={exchange} variant="outline" data-testid={`badge-exchange-${exchange}`}>
                 {exchange}
               </Badge>
