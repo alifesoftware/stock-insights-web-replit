@@ -166,7 +166,7 @@ export default function Screenshots() {
           <div className="flex items-center justify-center">
             {/* Simple Image Display */}
             <div className="text-center">
-              <div className="w-80 h-[600px] mx-auto mb-6">
+              <div className="w-96 h-[720px] mx-auto mb-6">
                 <img 
                   src={screenshots[currentIndex].image} 
                   alt={screenshots[currentIndex].title}
