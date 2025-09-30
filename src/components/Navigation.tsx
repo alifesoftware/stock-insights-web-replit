@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
 import logo from '@/assets/logo.webp';
+import ThemeToggle from './ThemeToggle';
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,7 +22,7 @@ export default function Navigation() {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6">
             <a href="#features" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-features">
               Features
             </a>
@@ -34,13 +35,17 @@ export default function Navigation() {
             <a href="/colors" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-colors">
               Colors
             </a>
-            <Button variant="default" size="sm" data-testid="button-get-started">
-              Get Started
-            </Button>
+            <div className="flex items-center space-x-3">
+              <ThemeToggle />
+              <Button variant="default" size="sm" data-testid="button-get-started">
+                Get Started
+              </Button>
+            </div>
           </div>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden">
+          {/* Mobile menu button and theme toggle */}
+          <div className="md:hidden flex items-center space-x-2">
+            <ThemeToggle />
             <Button
               variant="ghost"
               size="icon"
