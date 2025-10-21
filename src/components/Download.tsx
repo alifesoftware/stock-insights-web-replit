@@ -6,10 +6,6 @@ import appStoreButton from '@/assets/app-store.png';
 import googlePlayButton from '@/assets/google-play.png';
 
 export default function Download() {
-  //todo: remove mock functionality
-  const handleDownload = (platform: string) => {
-    console.log(`Download for ${platform} clicked`);
-  };
 
   return (
     <section id="download" className="py-24 px-4 sm:px-6 lg:px-8">
@@ -68,17 +64,19 @@ export default function Download() {
                 className="h-14 w-auto"
               />
             </button>
-            <button 
-              onClick={() => handleDownload('Android')}
+            <a 
+              href="https://play.google.com/store/apps/details?id=com.alifesoftware.stockmarketinsights"
+              target="_blank"
+              rel="noopener noreferrer"
               data-testid="button-final-download-android"
-              className="transition-transform hover:scale-105"
+              className="transition-transform hover:scale-105 inline-block"
             >
               <img 
                 src={googlePlayButton} 
                 alt="Get it on Google Play" 
                 className="h-14 w-auto"
               />
-            </button>
+            </a>
           </div>
 
           {/* Features List */}
