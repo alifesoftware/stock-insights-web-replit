@@ -34,17 +34,19 @@ export default function Hero() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button 
-              onClick={() => handleDownload('iOS')}
+            <a 
+              href="https://apps.apple.com/us/app/stock-market-ai-insights/id6753656223"
+              target="_blank"
+              rel="noopener noreferrer"
               data-testid="button-download-ios"
-              className="transition-transform hover:scale-105"
+              className="transition-transform hover:scale-105 inline-block"
             >
               <img 
                 src={appStoreButton} 
                 alt="Download on the App Store" 
                 className="h-14 w-auto"
               />
-            </button>
+            </a>
             <a 
               href="https://play.google.com/store/apps/details?id=com.alifesoftware.stockmarketinsights"
               target="_blank"
